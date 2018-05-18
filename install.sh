@@ -121,7 +121,7 @@ cd databases
     
     mkdir krakenhll_refseq
     cd krakenhll_refseq
-        wget
+        wget https://s3.amazonaws.com/metasub-cap-databases/krakenhll_refseq_complete.tar.gz
         tar -xzf
     cd ..
     

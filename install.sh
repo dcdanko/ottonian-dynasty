@@ -12,20 +12,20 @@ git clone https://github.com/dcdanko/ottonian-dynasty.git
 OTTO=${HOME}/ottonian-dynasty
 
 # Build and activate conda environment
-wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-bash Miniconda2-latest-Linux-x86_64.sh -b -p miniconda_py2
-export PATH="$HOME/miniconda_py2/bin:$PATH"
-conda config --add channels bioconda
-conda config --add channels conda-forge
-conda create --name cap_py2 --file ${OTTO}/py2_requirements.txt
+#wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
+#bash Miniconda2-latest-Linux-x86_64.sh -b -p miniconda_py2
+#export PATH="$HOME/miniconda_py2/bin:$PATH"
+#conda config --add channels bioconda
+#conda config --add channels conda-forge
+#conda create --name cap_py2 --file ${OTTO}/py2_requirements.txt
 
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda_py3
 export PATH="$HOME/miniconda_py3/bin:$PATH"
 conda config --add channels bioconda
 conda config --add channels conda-forge
-conda create --name cap_py3
-conda update readline
+yes | conda create --name cap_py3
+yes | conda update readline
 source activate cap_py3
 conda install -y bowtie2
 conda install -y diamond
@@ -35,6 +35,9 @@ conda install -y microbecensus
 conda install -y kraken
 conda install -y krakenhll
 conda install -y bracken
+conda install -y snakemake
+
+yes | pip2 install humann2
 
 
 mkdir tools

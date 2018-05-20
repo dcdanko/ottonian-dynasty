@@ -36,6 +36,7 @@ download_jobs = [
     ('krakenhll_refseq', 'https://s3.amazonaws.com/metasub-cap-databases/krakenhll_refseq_complete.tar.gz'),
     ('microbes', 'https://s3.amazonaws.com/metasub-cap-databases/staph_aureus_n315.tar.gz'),
     ('macrobes', 'https://s3.amazonaws.com/metasub-cap-databases/macrobe_quantification.tar.gz'),
+    ('macrobes', 'https://raw.githubusercontent.com/MetaSUB/macrobial-genomes/master/quantified_bias.json'),
 ]
 
 executor = ThreadPoolExecutor(max_workers=len(download_jobs))

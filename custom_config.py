@@ -112,4 +112,7 @@ config = {
         'ram': RAM_PER_CORE * 7,
         'time': 10,
     },
+    'filter_human_dna': {
+        'db': {'filepath': dbdir('hg38/hg38.bt2')},
+    },
 }

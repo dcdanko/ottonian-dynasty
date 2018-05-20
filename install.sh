@@ -11,24 +11,18 @@ yes | apt-get install bzip2
 git clone https://github.com/dcdanko/ottonian-dynasty.git
 OTTO=${HOME}/ottonian-dynasty
 
-# Build and activate conda environment
-#wget https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
-#bash Miniconda2-latest-Linux-x86_64.sh -b -p miniconda_py2
-#export PATH="$HOME/miniconda_py2/bin:$PATH"
-#conda config --add channels bioconda
-#conda config --add channels conda-forge
-#conda create --name cap_py2 --file ${OTTO}/py2_requirements.txt
 
 wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda_py3
 export PATH="$HOME/miniconda_py3/bin:$PATH"
 conda config --add channels bioconda
 conda config --add channels conda-forge
-yes | conda update readline
-conda install -y bowtie2 diamond mash microbecensus kraken krakenhll bracken snakemake
+conda update -y readline
+conda install -y bowtie2 diamond mash kraken krakenhll bracken snakemake
 conda install -y -c maxibor adapterremoval2
-yes | pip install gimme_input
 
+yes | pip install microbecensus
+yes | pip install gimme_input
 yes | pip2 install humann2
 
 

@@ -14,6 +14,7 @@ def get_downloader(dirname, uri):
         fname = uri.split('/')[-1]
         if isfile(fname):
             return
+        print(f'Downloading {fname}')
         urlretrieve(uri, filename=fname)
         if ('.tar.gz' in fname) or ('.tgz' in fname):
             tar = tarfile.open(fname)

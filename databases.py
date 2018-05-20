@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 from os import makedirs, chdir
-from os.path import isfile
+from os.path import isfile, join
 from urllib.request import urlretrieve
 import tarfile
 from concurrent.futures import ThreadPoolExecutor
@@ -10,17 +10,16 @@ from concurrent.futures import ThreadPoolExecutor
 def get_downloader(dirname, uri):
     def downloader():
         makedirs(dirname, exist_ok=True)
-        chdir(dirname)
-        fname = uri.split('/')[-1]
-        if isfile(fname):
+        fpath = join(dirname, uri.split('/')[-1])
+        if isfile(fpath):
             return
-        print(f'Downloading {fname}')
-        urlretrieve(uri, filename=fname)
-        if ('.tar.gz' in fname) or ('.tgz' in fname):
-            tar = tarfile.open(fname)
+        print(f'Downloading {uri}')
+        urlretrieve(uri, filename=fpath)
+        print(f'Finished {uri}')
+        if ('.tar.gz' in fpath) or ('.tgz' in fpath):
+            tar = tarfile.open(fpath)
             tar.extractall()
             tar.close()
-        chdir('..')
     return downloader
 
 

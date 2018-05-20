@@ -18,7 +18,7 @@ def get_downloader(dirname, uri):
         print(f'Finished {uri}')
         if ('.tar.gz' in fpath) or ('.tgz' in fpath):
             tar = tarfile.open(fpath)
-            tar.extractall()
+            tar.extractall(path=dirname)
             tar.close()
     return downloader
 

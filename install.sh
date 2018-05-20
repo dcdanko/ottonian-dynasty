@@ -24,7 +24,7 @@ bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda_py3
 export PATH="$HOME/miniconda_py3/bin:$PATH"
 conda config --add channels bioconda
 conda config --add channels conda-forge
-yes | conda create --name cap_py3
+yes | conda create --name cap_py3 python=3
 yes | conda update readline
 source activate cap_py3
 conda install -y bowtie2

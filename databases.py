@@ -32,6 +32,7 @@ download_jobs = [
     ('megares', 'https://s3.amazonaws.com/metasub-cap-databases/megares_v1.0.1.tar.gz'),
     ('hg38', 'https://s3.amazonaws.com/metasub-cap-databases/hg38_alt_contigs.tar.gz'),
     ('minikraken', 'https://s3.amazonaws.com/metasub-cap-databases/minikraken_20171019_8GB.tgz'),
+    ('minikraken', 'https://s3.amazonaws.com/metasub-cap-databases/minikraken_8GB_100mers_distrib.txt'),
     ('krakenhll_refseq', 'https://s3.amazonaws.com/metasub-cap-databases/krakenhll_refseq_complete.tar.gz'),
     ('microbes', 'https://s3.amazonaws.com/metasub-cap-databases/staph_aureus_n315.tar.gz'),
     ('macrobes', 'https://s3.amazonaws.com/metasub-cap-databases/macrobe_quantification.tar.gz'),

@@ -80,66 +80,7 @@ cd
 # Download databases
 mkdir databases
 cd databases
-    mkdir genes
-    cd genes
-        wget https://s3.amazonaws.com/metasub-cap-databases/uniref90_annotated.1.1.dmnd
-    cd ..
-    
-    mkdir card
-    cd card
-        wget https://s3.amazonaws.com/metasub-cap-databases/card_oct_2017_prot_seqs.faa
-        wget https://s3.amazonaws.com/metasub-cap-databases/card_oct_2017_prot_seqs.dmnd
-    cd ..
-    
-    mkdir methyls
-    cd methyls
-        wget https://s3.amazonaws.com/metasub-cap-databases/methyls_90.tar.gz
-        tar -xzf methyls_90.tar.gz
-    cd ..
-    
-    mkdir vfdb 
-    cd vfdb
-        wget https://s3.amazonaws.com/metasub-cap-databases/vfdb_setB_pro.tar.gz
-        tar -xzf vfdb_setB_pro.tar.gz
-    cd ..
-    
-    mkdir megares
-    cd megares
-        wget https://s3.amazonaws.com/metasub-cap-databases/megares_v1.0.1.tar.gz
-        tar -xzf megares_v1.0.1.tar.gz
-    cd ..
-    
-    mkdir hg38
-    cd hg38
-        wget https://s3.amazonaws.com/metasub-cap-databases/hg38_alt_contigs.tar.gz
-        tar -xzf hg38_alt_contigs.tar.gz
-    cd ..
-    
-    mkdir minikraken
-    cd minikraken
-        wget https://s3.amazonaws.com/metasub-cap-databases/minikraken_20171019_8GB.tgz
-        tar -xzf minikraken_20171019_8GB.tgz
-        wget
-    cd ..
-    
-    mkdir krakenhll_refseq
-    cd krakenhll_refseq
-        wget https://s3.amazonaws.com/metasub-cap-databases/krakenhll_refseq_complete.tar.gz
-        tar -xzf
-    cd ..
-    
-    
-    mkdir microbes
-    cd microbes
-        wget https://s3.amazonaws.com/metasub-cap-databases/staph_aureus_n315.tar.gz
-        tar -xzf staph_aureus_n315.tar.gz
-    cd ..
-    
-    mkdir macrobes
-    cd macrobes
-        wget https://s3.amazonaws.com/metasub-cap-databases/macrobe_quantification.tar.gz
-        tar -xzf 
-    cd ..
+    python ${OTTO}/databases.py
 cd
 
 

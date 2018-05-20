@@ -24,20 +24,10 @@ bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda_py3
 export PATH="$HOME/miniconda_py3/bin:$PATH"
 conda config --add channels bioconda
 conda config --add channels conda-forge
-yes | conda create --name cap_py3 python=3
 yes | conda update readline
-source activate cap_py3
-conda install -y bowtie2
-conda install -y diamond
+conda install -y bowtie2 diamond mash microbecensus kraken krakenhll bracken snakemake
 conda install -y -c maxibor adapterremoval2
-conda install -y mash
-conda install -y microbecensus
-conda install -y kraken
-conda install -y krakenhll
-conda install -y bracken
-conda install -y snakemake
 yes | pip install gimme_input
-
 
 yes | pip2 install humann2
 
@@ -95,7 +85,7 @@ cd test_cap
     yes | moduleultra install pipeline --dev ${HOME}/pipelines/MetaSUB_CAP
     moduleultra add pipeline metasub_cap
     datasuper add type sample microbiome
-    datasuper bio add-fastqs -1 _1.fastq.gz -2 _2.fastq.gz microbiome ${HOME}/ottonian-dynasty/test_metagenomic_1.fastq.gz ${HOME}/ottonian-dynasty/test_metagenomic_2.fastq.gz
+    datasuper bio add-fastqs -1 _1.fastq.gz -2 _2.fastq.gz microbiome ${OTTO}/test_metagenomic_1.fastq.gz ${OTTO}/test_metagenomic_2.fastq.gz
     moduleultra run pipeline -p metasub_qc_cap -c ${HOME}/ottonian-dynasty/custom_config.py
     moduleultra run pipeline -p metasub_cap --jobs $NTHREADS -c ${HOME}/ottonian-dynasty/custom_config.py
 cd

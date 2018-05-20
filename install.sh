@@ -36,6 +36,8 @@ conda install -y kraken
 conda install -y krakenhll
 conda install -y bracken
 conda install -y snakemake
+yes | pip install gimme_input
+
 
 yes | pip2 install humann2
 

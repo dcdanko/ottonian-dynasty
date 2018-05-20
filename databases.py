@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
-from os import makedirs, chdir, isfile
+from os import makedirs, chdir
+from os.path import isfile
 from urlib import urlretrieve
 import tarfile
 from concurrent.futures import ThreadPoolExecutor
